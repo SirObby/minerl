@@ -101,7 +101,7 @@ echo "$runDir"
 echo $MINERL_FORCE_BUILD 
 
 cd ~/dev/MCP-Reborn
-./gradlew runclient -Pargs="--envPort=$port"
+./gradlew -Dorg.gradle.java.home=$JAVA_HOME runclient -Pargs="--envPort=$port"
 
 if [ ! -e build/libs/MalmoMod-0.37.0-fat.jar ] || [ "$MINERL_FORCE_BUILD" == "1" ]; then
     echo "HELLO"
